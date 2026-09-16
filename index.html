@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="ku" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#6537ff">
+  <title>فرۆشیاریی مەروان | Marwan Center</title>
+  <meta name="description" content="کەلوپەلی قوتابخانە، چاپ و دیزاین — فرۆشیاریی مەروان">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;600;700;800;900&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --ink:#17152b;--muted:#6f6b86;--paper:#fff;--purple:#6c3cff;
+      --cyan:#15d8e6;--pink:#ff4ea2;--yellow:#ffd83d;--soft:#f5f1ff;
+      --shadow:0 18px 55px rgba(55,32,120,.17);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;min-height:100vh;color:var(--ink);
+      font-family:"Noto Sans Arabic",system-ui,sans-serif;
+      background:
+        radial-gradient(circle at 10% 4%,rgba(255,216,61,.34),transparent 25rem),
+        radial-gradient(circle at 96% 20%,rgba(21,216,230,.23),transparent 24rem),
+        radial-gradient(circle at 50% 75%,rgba(255,78,162,.15),transparent 28rem),
+        linear-gradient(145deg,#fdfbff,#f4f0ff 46%,#effcff);
+      overflow-x:hidden;
+    }
+    button,a{font:inherit;-webkit-tap-highlight-color:transparent}
+    a{text-decoration:none;color:inherit}
+    .ambient{position:fixed;inset:0;overflow:hidden;pointer-events:none;z-index:-1}
+    .blob{position:absolute;border-radius:50%;filter:blur(2px);opacity:.42;animation:drift 11s ease-in-out infinite alternate}
+    .b1{width:190px;height:190px;background:#a9f4ff;top:-55px;right:-65px}
+    .b2{width:150px;height:150px;background:#ffd6e9;top:42%;left:-85px;animation-delay:-4s}
+    .b3{width:120px;height:120px;background:#ffe99a;bottom:3%;right:-42px;animation-delay:-7s}
+    .float-icon{position:absolute;font-size:clamp(24px,6vw,36px);filter:drop-shadow(0 8px 10px rgba(53,31,99,.14));animation:float 6s ease-in-out infinite}
+    .i1{top:8%;left:4%;transform:rotate(-18deg)}.i2{top:30%;right:2%;animation-delay:-1.2s}
+    .i3{top:58%;left:3%;animation-delay:-2.7s}.i4{top:78%;right:3%;animation-delay:-4s}.i5{top:90%;left:7%;animation-delay:-5s}
+    @keyframes drift{to{transform:translate3d(24px,35px,0) scale(1.1)}}
+    @keyframes float{0%,100%{transform:translateY(0) rotate(-7deg)}50%{transform:translateY(-18px) rotate(8deg)}}
+    .page{width:min(100%,520px);margin:auto;padding:18px 16px calc(96px + env(safe-area-inset-bottom));display:flex;flex-direction:column}
+    .hero{order:1}
+    #links{order:2}
+    #videos{order:3}
+    #place{order:4}
+    footer{order:5}
+    .hero{
+      position:relative;overflow:hidden;border:1px solid rgba(255,255,255,.85);
+      border-radius:32px;padding:20px 18px 24px;text-align:center;
+      background:linear-gradient(145deg,rgba(255,255,255,.94),rgba(255,255,255,.70));
+      box-shadow:var(--shadow);backdrop-filter:blur(18px);
+    }
+    .hero:before{
+      content:"";position:absolute;width:240px;height:240px;border-radius:50%;
+      background:conic-gradient(from 90deg,var(--purple),var(--cyan),var(--yellow),var(--pink),var(--purple));
+      filter:blur(35px);opacity:.16;top:-165px;left:50%;transform:translateX(-50%);
+    }
+    .shop-cover{
+      height:135px;margin:-4px -2px 0;border-radius:23px;overflow:hidden;
+      position:relative;background:#221e42;
+    }
+    .shop-cover img{width:100%;height:100%;object-fit:cover;display:block}
+    .shop-cover:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 35%,rgba(22,14,54,.58))}
+    .logo{
+      width:96px;height:96px;border-radius:28px;margin:-47px auto 10px;position:relative;z-index:2;
+      padding:4px;background:linear-gradient(135deg,var(--yellow),var(--pink),var(--purple),var(--cyan));
+      box-shadow:0 13px 30px rgba(58,32,119,.3);animation:logoGlow 3s ease-in-out infinite;
+    }
+    .logo img{width:100%;height:100%;object-fit:cover;border-radius:24px;border:4px solid #fff}
+    @keyframes logoGlow{50%{transform:translateY(-4px);box-shadow:0 18px 40px rgba(108,60,255,.38)}}
+    .verified{display:inline-flex;align-items:center;gap:7px;padding:5px 11px;border-radius:999px;background:#f0ebff;color:#5f35df;font-size:11px;font-weight:800}
+    h1{font-size:25px;line-height:1.3;margin:8px 0 2px;font-weight:900}
+    .latin{font-family:Poppins,sans-serif;font-size:13px;letter-spacing:.11em;color:#6d648c;font-weight:700}
+    .tagline{margin:11px auto 17px;color:var(--muted);font-size:13px;line-height:1.8;max-width:370px}
+    .quick{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    .primary{
+      min-height:53px;border-radius:17px;display:flex;align-items:center;justify-content:center;gap:9px;
+      color:#fff;font-size:13px;font-weight:800;box-shadow:0 10px 24px rgba(55,35,120,.16);
+      transition:.2s transform,.2s filter;
+    }
+    .primary:active{transform:scale(.97)}
+    .primary.whatsapp{background:linear-gradient(135deg,#13c96a,#02a952)}
+    .primary.call{background:linear-gradient(135deg,#7b4cff,#4f2bd1)}
+    .icon{width:24px;height:24px;display:grid;place-items:center;font-size:18px}
+    .section{margin-top:27px}
+    .section-head{display:flex;align-items:end;justify-content:space-between;padding:0 5px;margin-bottom:12px}
+    .eyebrow{font:800 10px/1 Poppins,sans-serif;letter-spacing:.15em;color:var(--purple);text-transform:uppercase}
+    h2{font-size:19px;margin:5px 0 0;font-weight:900}
+    .count{font-size:11px;color:var(--muted);font-weight:700;background:#fff;padding:6px 9px;border-radius:999px;box-shadow:0 5px 15px rgba(50,31,100,.08)}
+    .video-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}
+    .video-card{
+      position:relative;border:0;padding:0;border-radius:22px;overflow:hidden;aspect-ratio:9/13;
+      cursor:pointer;background:#211d38;box-shadow:0 12px 28px rgba(38,27,77,.17);
+      isolation:isolate;text-align:right;
+    }
+    .video-card img{width:100%;height:100%;object-fit:cover;display:block;transition:.35s transform,.35s filter}
+    .video-card:active img{transform:scale(1.045)}
+    .video-card:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 46%,rgba(16,10,36,.84));z-index:1}
+    .play{
+      position:absolute;left:50%;top:45%;transform:translate(-50%,-50%);z-index:2;
+      width:49px;height:49px;border-radius:50%;display:grid;place-items:center;color:#fff;
+      background:rgba(255,255,255,.24);border:1px solid rgba(255,255,255,.65);
+      backdrop-filter:blur(10px);box-shadow:0 8px 24px rgba(0,0,0,.2);
+    }
+    .play:before{content:"";border-top:8px solid transparent;border-bottom:8px solid transparent;border-right:0;border-left:13px solid #fff;margin-left:3px}
+    .video-info{position:absolute;z-index:2;right:12px;left:10px;bottom:11px;color:#fff}
+    .video-info strong{display:block;font-size:12px;line-height:1.45}
+    .video-info span{display:inline-block;margin-top:3px;font:600 9px/1.4 Poppins,sans-serif;opacity:.8}
+    .socials{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    .social{
+      min-height:62px;padding:10px 12px;background:rgba(255,255,255,.88);border:1px solid rgba(255,255,255,.95);
+      border-radius:18px;display:flex;align-items:center;gap:10px;box-shadow:0 9px 25px rgba(46,31,94,.1);
+      transition:.2s transform;
+    }
+    .social:active{transform:scale(.975)}
+    .social .sicon{flex:0 0 39px;height:39px;border-radius:13px;display:grid;place-items:center;color:#fff;font:800 18px Poppins,sans-serif}
+    .social strong{display:block;font-size:12px}.social small{display:block;color:var(--muted);font:500 9px Poppins,sans-serif;margin-top:2px;direction:ltr;text-align:right;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:104px}
+    .fb{background:linear-gradient(135deg,#287be9,#1756bf)}.tk{background:linear-gradient(135deg,#111,#353047)}.tg{background:linear-gradient(135deg,#35b8ee,#198bc4)}
+    .vb{background:linear-gradient(135deg,#8e57c9,#6840a1)}.em{background:linear-gradient(135deg,#ffbe2f,#ff7d30)}.ph{background:linear-gradient(135deg,#1dd8cf,#1297c5)}.mp{background:linear-gradient(135deg,#ef4545,#d92563)}
+    .social.map{grid-column:1/-1;min-height:72px}
+    .social.map small{max-width:none;direction:rtl;font-family:"Noto Sans Arabic",sans-serif;font-size:10px;line-height:1.6}
+    .qr-note{
+      margin-top:11px;padding:12px 14px;border-radius:17px;background:linear-gradient(135deg,#efeaff,#e9fbff);
+      color:#655e80;font-size:11px;line-height:1.7;text-align:center;border:1px solid #fff;
+    }
+    .gallery-photos{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;padding:3px 3px 12px;scrollbar-width:none}
+    .gallery-photos::-webkit-scrollbar{display:none}
+    .photo{flex:0 0 78%;height:190px;border-radius:22px;overflow:hidden;scroll-snap-align:center;box-shadow:0 10px 25px rgba(39,26,80,.13);background:#ddd}
+    .photo img{width:100%;height:100%;object-fit:cover;display:block}
+    .location-card{display:flex;align-items:center;gap:13px;margin:0 3px 13px;padding:15px;border-radius:21px;color:#fff;background:linear-gradient(135deg,#6c3cff,#9c43d9 56%,#ff4e9d);box-shadow:0 13px 30px rgba(92,53,202,.25)}
+    .location-card .pin{flex:0 0 52px;height:52px;border-radius:17px;display:grid;place-items:center;font-size:27px;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.25)}
+    .location-card strong{display:block;font-size:14px;margin-bottom:3px}.location-card span{font-size:11px;line-height:1.7;opacity:.9}
+    footer{text-align:center;padding:26px 10px 0;color:#7b748f;font-size:10px}
+    footer b{font-family:Poppins,sans-serif;color:#5f35df}
+    .dock{
+      position:fixed;z-index:20;right:50%;bottom:max(12px,env(safe-area-inset-bottom));transform:translateX(50%);
+      width:min(calc(100% - 28px),490px);height:65px;padding:8px;border-radius:22px;
+      background:rgba(28,23,51,.88);backdrop-filter:blur(18px);display:grid;grid-template-columns:repeat(4,1fr);
+      box-shadow:0 16px 40px rgba(23,14,53,.3);border:1px solid rgba(255,255,255,.14)
+    }
+    .dock a{color:#d8d3e5;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;font-size:9px;font-weight:700;border-radius:15px}
+    .dock a:first-child{background:linear-gradient(135deg,#7a4eff,#5c35d8);color:#fff}
+    .dock span{font-size:19px}
+    .modal{position:fixed;inset:0;z-index:100;background:rgba(10,7,22,.94);display:none;align-items:center;justify-content:center;padding:56px 14px 22px;backdrop-filter:blur(12px)}
+    .modal.open{display:flex;animation:fade .2s ease}
+    @keyframes fade{from{opacity:0}to{opacity:1}}
+    .modal video{max-width:min(100%,420px);max-height:calc(100vh - 90px);border-radius:22px;background:#000;box-shadow:0 25px 70px rgba(0,0,0,.55)}
+    .close{position:absolute;top:max(13px,env(safe-area-inset-top));left:15px;width:42px;height:42px;border:1px solid rgba(255,255,255,.25);border-radius:14px;background:rgba(255,255,255,.13);color:#fff;font-size:25px;display:grid;place-items:center;cursor:pointer}
+    @media(min-width:440px){.video-grid{gap:14px}.video-card{aspect-ratio:9/12.8}}
+    @media(prefers-reduced-motion:reduce){*{animation:none!important;scroll-behavior:auto!important}}
+  </style>
+</head>
+<body>
+  <div class="ambient" aria-hidden="true">
+    <i class="blob b1"></i><i class="blob b2"></i><i class="blob b3"></i>
+    <span class="float-icon i1">✏️</span><span class="float-icon i2">📚</span>
+    <span class="float-icon i3">📐</span><span class="float-icon i4">🎨</span><span class="float-icon i5">🖨️</span>
+  </div>
+
+  <main class="page">
+    <section class="hero" id="home">
+      <div class="shop-cover"><img src="assets/store-hero.jpg" alt="فرۆشیاریی مەروان"></div>
+      <div class="logo"><img src="assets/store-logo.jpg" alt="لۆگۆی فرۆشیاریی مەروان"></div>
+      <span class="verified">✦ بەخێربێن بۆ پەیجە فەرمییەکەمان</span>
+      <h1>فرۆشیاریی مەروان</h1>
+      <div class="latin">MARWAN CENTER</div>
+      <p class="tagline">هەموو پێداویستییەکانی قوتابخانە، نووسینگە، چاپ و دیزاین لە یەک شوێن ✨</p>
+      <div class="quick">
+        <a class="primary whatsapp" href="https://wa.me/9647708631000" target="_blank" rel="noopener"><span class="icon">◉</span> واتساپ</a>
+        <a class="primary call" href="tel:+9647708631000"><span class="icon">☎</span> پەیوەندی</a>
+      </div>
+    </section>
+
+    <section class="section" id="videos">
+      <div class="section-head">
+        <div><div class="eyebrow">Video Gallery</div><h2>گەلەری ڤیدیۆکان</h2></div>
+        <span class="count">٦ ڤیدیۆ</span>
+      </div>
+      <div class="video-grid">
+        <button class="video-card" data-video="assets/videos/video-1.mp4" aria-label="کردنەوەی ڤیدیۆی یەکەم">
+          <img src="assets/posters/video-1.jpg" alt=""><span class="play"></span>
+          <span class="video-info"><strong>گەشتێک بە ناو فرۆشگاکەدا</strong><span>00:23</span></span>
+        </button>
+        <button class="video-card" data-video="assets/videos/video-2.mp4" aria-label="کردنەوەی ڤیدیۆی دووەم">
+          <img src="assets/posters/video-2.jpg" alt=""><span class="play"></span>
+          <span class="video-info"><strong>چاپی کوالێتی بەرز</strong><span>00:06</span></span>
+        </button>
+        <button class="video-card" data-video="assets/videos/video-3.mp4" aria-label="کردنەوەی ڤیدیۆی سێیەم">
+          <img src="assets/posters/video-3.jpg" alt=""><span class="play"></span>
+          <span class="video-info"><strong>دیزاین و چاپی تایبەت</strong><span>00:07</span></span>
+        </button>
+        <button class="video-card" data-video="assets/videos/video-4.mp4" aria-label="کردنەوەی ڤیدیۆی چوارەم">
+          <img src="assets/posters/video-4.jpg" alt=""><span class="play"></span>
+          <span class="video-info"><strong>تابلۆ و چاپی بازرگانی</strong><span>00:07</span></span>
+        </button>
+        <button class="video-card" data-video="assets/videos/video-5.mp4" aria-label="کردنەوەی ڤیدیۆی پێنجەم">
+          <img src="assets/posters/video-5.jpg" alt=""><span class="play"></span>
+          <span class="video-info"><strong>ئامێری چاپی پڕۆفیشناڵ</strong><span>00:05</span></span>
+        </button>
+        <button class="video-card" data-video="assets/videos/video-6.mp4" aria-label="کردنەوەی ڤیدیۆی شەشەم">
+          <img src="assets/posters/video-6.jpg" alt=""><span class="play"></span>
+          <span class="video-info"><strong>کەلوپەلی قوتابخانە</strong><span>01:09</span></span>
+        </button>
+      </div>
+    </section>
+
+    <section class="section" id="links">
+      <div class="section-head">
+        <div><div class="eyebrow">Stay Connected</div><h2>پەیوەندیمان پێوە بکە</h2></div>
+      </div>
+      <div class="socials">
+        <a class="social" href="https://www.facebook.com/" target="_blank" rel="noopener"><span class="sicon fb">f</span><span><strong>Facebook</strong><small>Marwan Center</small></span></a>
+        <a class="social" href="https://www.tiktok.com/@marwan_center1" target="_blank" rel="noopener"><span class="sicon tk">♪</span><span><strong>TikTok</strong><small>@marwan_center1</small></span></a>
+        <a class="social" href="https://t.me/+9647708631000" target="_blank" rel="noopener"><span class="sicon tg">➤</span><span><strong>Telegram</strong><small>0770 863 1000</small></span></a>
+        <a class="social" href="viber://chat?number=%2B9647708631000"><span class="sicon vb">☎</span><span><strong>Viber</strong><small>0770 863 1000</small></span></a>
+        <a class="social" href="mailto:shacenter2007@gmail.com"><span class="sicon em">✉</span><span><strong>Email</strong><small>shacenter2007@gmail.com</small></span></a>
+        <a class="social" href="tel:+9647708631000"><span class="sicon ph">☎</span><span><strong>Phone</strong><small>0770 863 1000</small></span></a>
+        <a class="social map" href="https://www.google.com/maps/place/35.593745,+45.372473/@35.5939369,45.3725758,19z/data=!4m4!3m3!8m2!3d35.5937448!4d45.372473?utm_campaign=ml-ardl-mgrc&amp;g_ep=Eg1tbF8yMDI2MDkxM18wIOC7DCoASAJQAQ%3D%3D" target="_blank" rel="noopener"><span class="sicon mp">⌖</span><span><strong>Google Maps</strong><small>قولەرەیسی خوارو، بەرامبەر دۆندرمەی جیلاتۆ</small></span></a>
+      </div>
+      <div class="qr-note">بۆ پەیوەندیی خێرا، لەسەر هەر دوگمەیەک کلیک بکە؛ ڤیدیۆکانیش لە گەلەری سەرەوە بە گەورەیی دەکرێنەوە.</div>
+    </section>
+
+    <section class="section" id="place">
+      <div class="section-head"><div><div class="eyebrow">Our Place</div><h2>فرۆشگاکەمان</h2></div></div>
+      <a class="location-card" href="https://www.google.com/maps/place/35.593745,+45.372473/@35.5939369,45.3725758,19z/data=!4m4!3m3!8m2!3d35.5937448!4d45.372473?utm_campaign=ml-ardl-mgrc&amp;g_ep=Eg1tbF8yMDI2MDkxM18wIOC7DCoASAJQAQ%3D%3D" target="_blank" rel="noopener">
+        <span class="pin">📍</span><span><strong>کردنەوەی شوێن لە Google Maps</strong><span>قولەرەیسی خوارو، بەرامبەر دۆندرمەی جیلاتۆ</span></span>
+      </a>
+      <div class="gallery-photos">
+        <div class="photo"><img src="assets/store-1.jpg" alt="دەرەوەی فرۆشیاریی مەروان"></div>
+        <div class="photo"><img src="assets/store-2.jpg" alt="فرۆشیاریی مەروان"></div>
+        <div class="photo"><img src="assets/store-3.jpg" alt="پەیجی فرۆشیاریی مەروان"></div>
+      </div>
+    </section>
+
+    <footer>© 2026 <b>MARWAN CENTER</b> · هەموو مافەکان پارێزراون</footer>
+  </main>
+
+  <nav class="dock" aria-label="ڕێنمایی">
+    <a href="#home"><span>⌂</span>سەرەتا</a>
+    <a href="#links"><span>◉</span>پەیوەندی</a>
+    <a href="#videos"><span>▶</span>ڤیدیۆکان</a>
+    <a href="#place"><span>⌖</span>شوێن</a>
+  </nav>
+
+  <div class="modal" id="videoModal" role="dialog" aria-modal="true" aria-label="پەخشی ڤیدیۆ">
+    <button class="close" type="button" aria-label="داخستن">×</button>
+    <video id="player" controls playsinline preload="metadata"></video>
+  </div>
+  <script>
+    const modal=document.getElementById('videoModal');
+    const player=document.getElementById('player');
+    const closeBtn=modal.querySelector('.close');
+    function closeVideo(){player.pause();player.removeAttribute('src');player.load();modal.classList.remove('open');document.body.style.overflow=''}
+    document.querySelectorAll('.video-card').forEach(card=>card.addEventListener('click',()=>{
+      player.src=card.dataset.video;modal.classList.add('open');document.body.style.overflow='hidden';
+      player.play().catch(()=>{});
+    }));
+    closeBtn.addEventListener('click',closeVideo);
+    modal.addEventListener('click',e=>{if(e.target===modal)closeVideo()});
+    document.addEventListener('keydown',e=>{if(e.key==='Escape')closeVideo()});
+  </script>
+</body>
+</html>
