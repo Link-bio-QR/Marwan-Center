@@ -302,24 +302,29 @@
       .social .sicon{flex-basis:33px;height:33px;font-size:15px}.video-grid{gap:6px}
       .float-icon{font-size:18px;padding:6px}
     }
+    .card-sticker{display:none}
     @media(max-width:600px){
-      .ambient{z-index:8!important;overflow:visible!important;opacity:1!important}
+      .ambient{z-index:0!important;opacity:1!important}
+      .ambient .float-icon{display:none!important}
       .page{z-index:1}
-      .float-icon{
-        position:fixed!important;z-index:9!important;opacity:1!important;font-size:20px!important;
-        width:38px;height:38px;padding:0!important;display:grid;place-items:center;border-radius:13px!important;
-        border:2px solid rgba(255,255,255,.96)!important;
-        box-shadow:0 7px 20px rgba(55,35,120,.25)!important;
-        pointer-events:none;animation:visibleSticker 3.7s ease-in-out infinite!important;
+      .hero,.section{position:relative;overflow:visible}
+      .card-sticker{
+        position:absolute;z-index:12;width:29px;height:29px;display:grid;place-items:center;
+        border-radius:10px;font-size:16px;background:#fff;border:2px solid #fff;
+        box-shadow:0 6px 15px rgba(55,35,120,.22);pointer-events:none;
+        animation:cardStickerMove 3.5s ease-in-out infinite;
       }
-      .i1{top:13%!important;left:3px!important;right:auto!important;background:#fff1ae!important;animation-delay:0s!important}
-      .i2{top:30%!important;right:3px!important;left:auto!important;background:#eee5ff!important;animation-delay:-.7s!important}
-      .i3{top:47%!important;left:3px!important;right:auto!important;background:#d8fbff!important;animation-delay:-1.4s!important}
-      .i4{top:64%!important;right:3px!important;left:auto!important;background:#ffe0ef!important;animation-delay:-2.1s!important}
-      .i5{top:81%!important;left:3px!important;right:auto!important;background:#e4ffe5!important;animation-delay:-2.8s!important}
-      @keyframes visibleSticker{
+      .st-hero-1{top:105px;right:-6px;background:#fff0ad;transform:rotate(8deg)}
+      .st-hero-2{bottom:12px;left:-6px;background:#eee4ff;animation-delay:-.6s}
+      .st-links-1{top:7px;right:-7px;background:#dafbff;animation-delay:-1.1s}
+      .st-links-2{bottom:13px;left:-7px;background:#ffe0ef;animation-delay:-1.6s}
+      .st-videos-1{top:7px;left:-7px;background:#e7ffe7;animation-delay:-2.1s}
+      .st-videos-2{top:52%;right:-7px;background:#fff1bf;animation-delay:-2.6s}
+      .st-place-1{top:7px;right:-7px;background:#e2ecff;animation-delay:-3.1s}
+      .st-place-2{bottom:68px;left:-7px;background:#f3e5ff;animation-delay:-1.3s}
+      @keyframes cardStickerMove{
         0%,100%{transform:translateY(0) rotate(-8deg) scale(1)}
-        50%{transform:translateY(-12px) rotate(8deg) scale(1.08)}
+        50%{transform:translateY(-8px) rotate(8deg) scale(1.07)}
       }
     }
   </style>
@@ -333,6 +338,7 @@
 
   <main class="page">
     <section class="hero" id="home">
+      <span class="card-sticker st-hero-1">✏️</span><span class="card-sticker st-hero-2">📒</span>
       <div class="shop-cover"><img src="assets/store-hero.jpg" alt="قرطاسیەی مەروان"></div>
       <div class="logo"><img src="assets/store-logo.jpg" alt="لۆگۆی قرطاسیەی مەروان"></div>
       <span class="verified">✦ بەخێربێن بۆ پەیجە فەرمییەکەمان</span>
@@ -346,6 +352,7 @@
     </section>
 
     <section class="section" id="videos">
+      <span class="card-sticker st-videos-1">📐</span><span class="card-sticker st-videos-2">🎨</span>
       <div class="section-head">
         <div><div class="eyebrow">Video Gallery</div><h2>گەلەری ڤیدیۆکان</h2></div>
         <span class="count">٦ ڤیدیۆ</span>
@@ -379,6 +386,7 @@
     </section>
 
     <section class="section" id="links">
+      <span class="card-sticker st-links-1">🖍️</span><span class="card-sticker st-links-2">📎</span>
       <div class="section-head">
         <div><div class="eyebrow">Stay Connected</div><h2>پەیوەندیمان پێوە بکە</h2></div>
       </div>
@@ -395,6 +403,7 @@
     </section>
 
     <section class="section" id="place">
+      <span class="card-sticker st-place-1">🖨️</span><span class="card-sticker st-place-2">📚</span>
       <div class="section-head"><div><div class="eyebrow">Our Place</div><h2>فرۆشگاکەمان</h2></div></div>
       <a class="location-card" href="https://www.google.com/maps/place/35.593745,+45.372473/@35.5939369,45.3725758,19z/data=!4m4!3m3!8m2!3d35.5937448!4d45.372473?utm_campaign=ml-ardl-mgrc&amp;g_ep=Eg1tbF8yMDI2MDkxM18wIOC7DCoASAJQAQ%3D%3D" target="_blank" rel="noopener">
         <span class="pin"><i class="fa-solid fa-location-dot" aria-hidden="true"></i></span><span><strong>کردنەوەی شوێن لە Google Maps</strong><span>قولەرەیسی خوارو، بەرامبەر دۆندرمەی جیلاتۆ</span></span>
