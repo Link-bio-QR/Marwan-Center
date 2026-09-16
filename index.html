@@ -327,6 +327,24 @@
         50%{transform:translateY(-8px) rotate(8deg) scale(1.07)}
       }
     }
+    /* Fast mobile rendering: remove expensive blur layers while keeping the look */
+    @media(max-width:600px){
+      html{scroll-behavior:auto!important}
+      body{background:#f7f5ff!important;touch-action:pan-y}
+      .ambient,.blob{display:none!important}
+      .hero,.section,.dock,.social,.play,.location-card{
+        -webkit-backdrop-filter:none!important;backdrop-filter:none!important;filter:none!important;
+      }
+      .hero{background:#fff!important;box-shadow:0 8px 22px rgba(55,39,110,.10)!important}
+      .section{background:#fff!important;box-shadow:0 6px 18px rgba(51,36,105,.08)!important}
+      .dock{background:#fff!important;box-shadow:0 8px 22px rgba(35,25,77,.16)!important}
+      .social{box-shadow:0 3px 10px rgba(43,31,91,.06)!important}
+      .video-card{box-shadow:0 4px 12px rgba(34,25,70,.12)!important}
+      .video-card img{transition:none!important}
+      .logo{animation:none!important}
+      .card-sticker{will-change:transform;backface-visibility:hidden;animation-duration:5s!important}
+      button,a{touch-action:manipulation}
+    }
   </style>
 </head>
 <body>
@@ -359,27 +377,27 @@
       </div>
       <div class="video-grid">
         <button class="video-card" data-video="assets/videos/video-1.mp4" aria-label="کردنەوەی ڤیدیۆی یەکەم">
-          <img src="assets/posters/video-1.jpg" alt=""><span class="play"></span>
+          <img src="assets/posters/video-1.jpg" alt="" loading="lazy" decoding="async"><span class="play"></span>
           <span class="video-info"><strong>گەشتێک بە ناو فرۆشگاکەدا</strong><span>00:23</span></span>
         </button>
         <button class="video-card" data-video="assets/videos/video-2.mp4" aria-label="کردنەوەی ڤیدیۆی دووەم">
-          <img src="assets/posters/video-2.jpg" alt=""><span class="play"></span>
+          <img src="assets/posters/video-2.jpg" alt="" loading="lazy" decoding="async"><span class="play"></span>
           <span class="video-info"><strong>چاپی کوالێتی بەرز</strong><span>00:06</span></span>
         </button>
         <button class="video-card" data-video="assets/videos/video-3.mp4" aria-label="کردنەوەی ڤیدیۆی سێیەم">
-          <img src="assets/posters/video-3.jpg" alt=""><span class="play"></span>
+          <img src="assets/posters/video-3.jpg" alt="" loading="lazy" decoding="async"><span class="play"></span>
           <span class="video-info"><strong>دیزاین و چاپی تایبەت</strong><span>00:07</span></span>
         </button>
         <button class="video-card" data-video="assets/videos/video-4.mp4" aria-label="کردنەوەی ڤیدیۆی چوارەم">
-          <img src="assets/posters/video-4.jpg" alt=""><span class="play"></span>
+          <img src="assets/posters/video-4.jpg" alt="" loading="lazy" decoding="async"><span class="play"></span>
           <span class="video-info"><strong>تابلۆ و چاپی بازرگانی</strong><span>00:07</span></span>
         </button>
         <button class="video-card" data-video="assets/videos/video-5.mp4" aria-label="کردنەوەی ڤیدیۆی پێنجەم">
-          <img src="assets/posters/video-5.jpg" alt=""><span class="play"></span>
+          <img src="assets/posters/video-5.jpg" alt="" loading="lazy" decoding="async"><span class="play"></span>
           <span class="video-info"><strong>ئامێری چاپی پڕۆفیشناڵ</strong><span>00:05</span></span>
         </button>
         <button class="video-card" data-video="assets/videos/video-6.mp4" aria-label="کردنەوەی ڤیدیۆی شەشەم">
-          <img src="assets/posters/video-6.jpg" alt=""><span class="play"></span>
+          <img src="assets/posters/video-6.jpg" alt="" loading="lazy" decoding="async"><span class="play"></span>
           <span class="video-info"><strong>کەلوپەلی قوتابخانە</strong><span>01:09</span></span>
         </button>
       </div>
@@ -409,7 +427,7 @@
         <span class="pin"><i class="fa-solid fa-location-dot" aria-hidden="true"></i></span><span><strong>کردنەوەی شوێن لە Google Maps</strong><span>قولەرەیسی خوارو، بەرامبەر دۆندرمەی جیلاتۆ</span></span>
       </a>
       <div class="gallery-photos">
-        <div class="photo"><img src="assets/store-1.jpg" alt="دەرەوەی قرطاسیەی مەروان"></div>
+        <div class="photo"><img src="assets/store-1.jpg" alt="دەرەوەی قرطاسیەی مەروان" loading="lazy" decoding="async"></div>
       </div>
     </section>
 
