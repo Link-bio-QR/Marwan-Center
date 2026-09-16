@@ -5,10 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#6537ff">
   <title>قرطاسیەی مەروان | Marwan Center</title>
-  <meta name="description" content="کەلوپەلی قوتابخانە، چاپ و دیزاین - قرطاسیەی مەروان">
+  <meta name="description" content="کەلوپەلی قوتابخانە، چاپ و دیزاین — قرطاسیەی مەروان">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;600;700;800;900&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
   <style>
     :root{
       --ink:#17152b;--muted:#6f6b86;--paper:#fff;--purple:#6c3cff;
@@ -80,7 +81,7 @@
       transition:.2s transform,.2s filter;
     }
     .primary:active{transform:scale(.97)}
-    .primary.whatsapp{background:linear-gradient(135deg,#13c96a,#02a952)}
+    .primary.whatsapp{background:linear-gradient(135deg,#25d366,#128c7e)}
     .primary.call{background:linear-gradient(135deg,#7b4cff,#4f2bd1)}
     .icon{width:24px;height:24px;display:grid;place-items:center;font-size:18px}
     .section{margin-top:27px}
@@ -114,19 +115,18 @@
       transition:.2s transform;
     }
     .social:active{transform:scale(.975)}
-    .social .sicon{flex:0 0 39px;height:39px;border-radius:13px;display:grid;place-items:center;color:#fff;font:800 18px Poppins,sans-serif}
+    .social .sicon{flex:0 0 39px;height:39px;border-radius:13px;display:grid;place-items:center;color:#fff;font-size:19px}
     .social strong{display:block;font-size:12px}.social small{display:block;color:var(--muted);font:500 9px Poppins,sans-serif;margin-top:2px;direction:ltr;text-align:right;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:104px}
-    .fb{background:linear-gradient(135deg,#287be9,#1756bf)}.tk{background:linear-gradient(135deg,#111,#353047)}.tg{background:linear-gradient(135deg,#35b8ee,#198bc4)}
-    .vb{background:linear-gradient(135deg,#8e57c9,#6840a1)}.em{background:linear-gradient(135deg,#ffbe2f,#ff7d30)}.ph{background:linear-gradient(135deg,#1dd8cf,#1297c5)}.mp{background:linear-gradient(135deg,#ef4545,#d92563)}
+    .fb{background:#1877f2}.tk{background:#010101;box-shadow:inset 3px 0 #25f4ee,inset -3px 0 #fe2c55}.tg{background:#229ed9}
+    .vb{background:#7360f2}.em{background:#ea4335}.ph{background:#34a853}.mp{background:linear-gradient(135deg,#4285f4,#34a853 35%,#fbbc05 68%,#ea4335)}
     .social.map{grid-column:1/-1;min-height:72px}
     .social.map small{max-width:none;direction:rtl;font-family:"Noto Sans Arabic",sans-serif;font-size:10px;line-height:1.6}
     .qr-note{
       margin-top:11px;padding:12px 14px;border-radius:17px;background:linear-gradient(135deg,#efeaff,#e9fbff);
       color:#655e80;font-size:11px;line-height:1.7;text-align:center;border:1px solid #fff;
     }
-    .gallery-photos{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;padding:3px 3px 12px;scrollbar-width:none}
-    .gallery-photos::-webkit-scrollbar{display:none}
-    .photo{flex:0 0 78%;height:190px;border-radius:22px;overflow:hidden;scroll-snap-align:center;box-shadow:0 10px 25px rgba(39,26,80,.13);background:#ddd}
+    .gallery-photos{display:block;padding:3px 3px 12px}
+    .photo{width:100%;height:230px;border-radius:22px;overflow:hidden;box-shadow:0 10px 25px rgba(39,26,80,.13);background:#ddd}
     .photo img{width:100%;height:100%;object-fit:cover;display:block}
     .location-card{display:flex;align-items:center;gap:13px;margin:0 3px 13px;padding:15px;border-radius:21px;color:#fff;background:linear-gradient(135deg,#6c3cff,#9c43d9 56%,#ff4e9d);box-shadow:0 13px 30px rgba(92,53,202,.25)}
     .location-card .pin{flex:0 0 52px;height:52px;border-radius:17px;display:grid;place-items:center;font-size:27px;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.25)}
@@ -141,7 +141,7 @@
     }
     .dock a{color:#d8d3e5;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;font-size:9px;font-weight:700;border-radius:15px}
     .dock a:first-child{background:linear-gradient(135deg,#7a4eff,#5c35d8);color:#fff}
-    .dock span{font-size:19px}
+    .dock span{font-size:18px}
     .modal{position:fixed;inset:0;z-index:100;background:rgba(10,7,22,.94);display:none;align-items:center;justify-content:center;padding:56px 14px 22px;backdrop-filter:blur(12px)}
     .modal.open{display:flex;animation:fade .2s ease}
     @keyframes fade{from{opacity:0}to{opacity:1}}
@@ -161,14 +161,14 @@
   <main class="page">
     <section class="hero" id="home">
       <div class="shop-cover"><img src="assets/store-hero.jpg" alt="قرطاسیەی مەروان"></div>
-      <div class="logo"><img src="assets/store-logo.jpg" alt="لۆگۆی فرۆشیاریی مەروان"></div>
+      <div class="logo"><img src="assets/store-logo.jpg" alt="لۆگۆی قرطاسیەی مەروان"></div>
       <span class="verified">✦ بەخێربێن بۆ پەیجە فەرمییەکەمان</span>
       <h1>قرطاسیەی مەروان</h1>
       <div class="latin">MARWAN CENTER</div>
       <p class="tagline">هەموو پێداویستییەکانی قوتابخانە، نووسینگە، چاپ و دیزاین لە یەک شوێن ✨</p>
       <div class="quick">
-        <a class="primary whatsapp" href="https://wa.me/9647708631000" target="_blank" rel="noopener"><span class="icon">◉</span> واتساپ</a>
-        <a class="primary call" href="tel:+9647708631000"><span class="icon">☎</span> پەیوەندی</a>
+        <a class="primary whatsapp" href="https://wa.me/9647708631000" target="_blank" rel="noopener"><span class="icon"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i></span> واتساپ</a>
+        <a class="primary call" href="tel:+9647708631000"><span class="icon"><i class="fa-solid fa-phone" aria-hidden="true"></i></span> پەیوەندی</a>
       </div>
     </section>
 
@@ -210,26 +210,24 @@
         <div><div class="eyebrow">Stay Connected</div><h2>پەیوەندیمان پێوە بکە</h2></div>
       </div>
       <div class="socials">
-        <a class="social" href="https://www.facebook.com/" target="_blank" rel="noopener"><span class="sicon fb">f</span><span><strong>Facebook</strong><small>Marwan Center</small></span></a>
-        <a class="social" href="https://www.tiktok.com/@marwan_center1" target="_blank" rel="noopener"><span class="sicon tk">♪</span><span><strong>TikTok</strong><small>@marwan_center1</small></span></a>
-        <a class="social" href="https://t.me/+9647708631000" target="_blank" rel="noopener"><span class="sicon tg">➤</span><span><strong>Telegram</strong><small>0770 863 1000</small></span></a>
-        <a class="social" href="viber://chat?number=%2B9647708631000"><span class="sicon vb">☎</span><span><strong>Viber</strong><small>0770 863 1000</small></span></a>
-        <a class="social" href="mailto:shacenter2007@gmail.com"><span class="sicon em">✉</span><span><strong>Email</strong><small>shacenter2007@gmail.com</small></span></a>
-        <a class="social" href="tel:+9647708631000"><span class="sicon ph">☎</span><span><strong>Phone</strong><small>0770 863 1000</small></span></a>
-        <a class="social map" href="https://www.google.com/maps/place/35.593745,+45.372473/@35.5939369,45.3725758,19z/data=!4m4!3m3!8m2!3d35.5937448!4d45.372473?utm_campaign=ml-ardl-mgrc&amp;g_ep=Eg1tbF8yMDI2MDkxM18wIOC7DCoASAJQAQ%3D%3D" target="_blank" rel="noopener"><span class="sicon mp">⌖</span><span><strong>Google Maps</strong><small>قولەرەیسی خوارو، بەرامبەر دۆندرمەی جیلاتۆ</small></span></a>
+        <a class="social" href="https://www.facebook.com/" target="_blank" rel="noopener"><span class="sicon fb"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></span><span><strong>Facebook</strong><small>Marwan Center</small></span></a>
+        <a class="social" href="https://www.tiktok.com/@marwan_center1" target="_blank" rel="noopener"><span class="sicon tk"><i class="fa-brands fa-tiktok" aria-hidden="true"></i></span><span><strong>TikTok</strong><small>@marwan_center1</small></span></a>
+        <a class="social" href="https://t.me/+9647708631000" target="_blank" rel="noopener"><span class="sicon tg"><i class="fa-brands fa-telegram" aria-hidden="true"></i></span><span><strong>Telegram</strong><small>0770 863 1000</small></span></a>
+        <a class="social" href="viber://chat?number=%2B9647708631000"><span class="sicon vb"><i class="fa-brands fa-viber" aria-hidden="true"></i></span><span><strong>Viber</strong><small>0770 863 1000</small></span></a>
+        <a class="social" href="mailto:shacenter2007@gmail.com"><span class="sicon em"><i class="fa-solid fa-envelope" aria-hidden="true"></i></span><span><strong>Email</strong><small>shacenter2007@gmail.com</small></span></a>
+        <a class="social" href="tel:+9647708631000"><span class="sicon ph"><i class="fa-solid fa-phone" aria-hidden="true"></i></span><span><strong>Phone</strong><small>0770 863 1000</small></span></a>
+        <a class="social map" href="https://www.google.com/maps/place/35.593745,+45.372473/@35.5939369,45.3725758,19z/data=!4m4!3m3!8m2!3d35.5937448!4d45.372473?utm_campaign=ml-ardl-mgrc&amp;g_ep=Eg1tbF8yMDI2MDkxM18wIOC7DCoASAJQAQ%3D%3D" target="_blank" rel="noopener"><span class="sicon mp"><i class="fa-solid fa-location-dot" aria-hidden="true"></i></span><span><strong>Google Maps</strong><small>قولەرەیسی خوارو، بەرامبەر دۆندرمەی جیلاتۆ</small></span></a>
       </div>
-      <div class="qr-note">بۆ پەیوەندیی خێرا، لەسەر هەر دوگمەیەک کلیک بکە؛ ڤیدیۆکانیش لە گەلەری  بە گەورەیی دەکرێنەوە.</div>
+      <div class="qr-note">بۆ پەیوەندیی خێرا، لەسەر هەر دوگمەیەک کلیک بکە؛ ڤیدیۆکانیش لە گەلەری سەرەوە بە گەورەیی دەکرێنەوە.</div>
     </section>
 
     <section class="section" id="place">
       <div class="section-head"><div><div class="eyebrow">Our Place</div><h2>فرۆشگاکەمان</h2></div></div>
       <a class="location-card" href="https://www.google.com/maps/place/35.593745,+45.372473/@35.5939369,45.3725758,19z/data=!4m4!3m3!8m2!3d35.5937448!4d45.372473?utm_campaign=ml-ardl-mgrc&amp;g_ep=Eg1tbF8yMDI2MDkxM18wIOC7DCoASAJQAQ%3D%3D" target="_blank" rel="noopener">
-        <span class="pin">📍</span><span><strong>کردنەوەی شوێن لە Google Maps</strong><span>قولەرەیسی خوارو، بەرامبەر دۆندرمەی جیلاتۆ</span></span>
+        <span class="pin"><i class="fa-solid fa-location-dot" aria-hidden="true"></i></span><span><strong>کردنەوەی شوێن لە Google Maps</strong><span>قولەرەیسی خوارو، بەرامبەر دۆندرمەی جیلاتۆ</span></span>
       </a>
       <div class="gallery-photos">
-        <div class="photo"><img src="assets/store-1.jpg" alt="دەرەوەی فرۆشیاریی مەروان"></div>
-        <div class="photo"><img src="assets/store-2.jpg" alt="فرۆشیاریی مەروان"></div>
-        <div class="photo"><img src="assets/store-3.jpg" alt="پەیجی فرۆشیاریی مەروان"></div>
+        <div class="photo"><img src="assets/store-1.jpg" alt="دەرەوەی قرطاسیەی مەروان"></div>
       </div>
     </section>
 
@@ -237,10 +235,10 @@
   </main>
 
   <nav class="dock" aria-label="ڕێنمایی">
-    <a href="#home"><span>⌂</span>سەرەتا</a>
-    <a href="#links"><span>◉</span>پەیوەندی</a>
-    <a href="#videos"><span>▶</span>ڤیدیۆکان</a>
-    <a href="#place"><span>⌖</span>شوێن</a>
+    <a href="#home"><span><i class="fa-solid fa-house" aria-hidden="true"></i></span>سەرەتا</a>
+    <a href="#links"><span><i class="fa-solid fa-address-book" aria-hidden="true"></i></span>پەیوەندی</a>
+    <a href="#videos"><span><i class="fa-solid fa-circle-play" aria-hidden="true"></i></span>ڤیدیۆکان</a>
+    <a href="#place"><span><i class="fa-solid fa-location-dot" aria-hidden="true"></i></span>شوێن</a>
   </nav>
 
   <div class="modal" id="videoModal" role="dialog" aria-modal="true" aria-label="پەخشی ڤیدیۆ">
